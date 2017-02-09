@@ -318,7 +318,6 @@ BOOL removeLoadEntryFromBinary(NSMutableData *binary, struct thin_header macho, 
                         
                         // increment s by the size of the ULEB
                         s += len;
-
                         
                     } else if (opcode == BIND_OPCODE_SET_DYLIB_ORDINAL_IMM) {
                         uint8_t immediate = *p & BIND_IMMEDIATE_MASK;

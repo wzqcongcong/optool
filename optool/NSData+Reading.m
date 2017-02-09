@@ -46,7 +46,7 @@ static char OFFSET;
 
 - (uint8_t)nextByte
 {
-    uint8_t nextByte    = [self byteAtOffset:self.currentOffset];
+    uint8_t nextByte = [self byteAtOffset:self.currentOffset];
     self.currentOffset += sizeof(uint8_t);
     return nextByte;
 }
@@ -93,7 +93,7 @@ static char OFFSET;
     return nextLong;
 }
 
-- (uint64_t)longAtOffset:(NSUInteger)offset;
+- (uint64_t)longAtOffset:(NSUInteger)offset
 {
     uint64_t result;
     [self getBytes:&result range:NSMakeRange(offset, sizeof(result))];
@@ -121,7 +121,7 @@ static char OFFSET;
     [self appendBytes:&swap length:sizeof(swap)];
 }
 
-- (void)appendLong:(uint64_t)value;
+- (void)appendLong:(uint64_t)value
 {
     uint64_t swap = CFSwapInt64HostToLittle(value);
     [self appendBytes:&swap length:sizeof(swap)];

@@ -1,7 +1,7 @@
 optool
 ======
 
-optool is a tool which interfaces with Mach-O binaries in order to insert/remove load commands, strip code signatures, resign, and remove aslr. Below is its help:
+optool is a tool which interfaces with MachO binaries in order to insert/remove load commands, strip code signatures, resign, and remove aslr. Below is its help.
 
 ```
 optool v0.1

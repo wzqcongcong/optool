@@ -90,7 +90,6 @@ int main(int argc, const char * argv[]) {
                 NSString *vers = [bundle objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
                 if (vers)
                     bkp = [bkp stringByAppendingPathExtension:vers];
-
             }
             bkp;
         });;
@@ -147,6 +146,7 @@ int main(int argc, const char * argv[]) {
                 } else {
                     LOG("Successfully stripped code signatures");
                 }
+                
             } else if ([package booleanValueForSignature:unrestrict]) {
                 if (!unrestrictBinary(binary, macho, [package booleanValueForSignature:weak])) {
                     LOG("Found no restrict section to remove");
@@ -162,6 +162,7 @@ int main(int argc, const char * argv[]) {
                     LOG("No entries for %s exist to remove", dylibPath.UTF8String);
                     return OPErrorNoEntries;
                 }
+                
             } else if ([package booleanValueForSignature:install]) {
                 NSString *lc = [package firstObjectForSignature:command];
                 uint32_t command = LC_LOAD_DYLIB;
@@ -178,11 +179,13 @@ int main(int argc, const char * argv[]) {
                     LOG("Failed to insert a %s command for %s", LC(command), CPU(macho.header.cputype));
                     return OPErrorInsertFailure;
                 }
+                
             } else if ([package booleanValueForSignature:aslr]) {
                 LOG("Attempting to remove ASLR");
                 if (removeASLRFromBinary(binary, macho)) {
                     LOG("Successfully removed ASLR from binary");
                 }
+                
             } else if ([package countOfSignature:rename] > 0) {
                 NSLog(@"%@", [package allObjectsForSignature:rename]);
                 
