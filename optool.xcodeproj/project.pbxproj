@@ -57,13 +57,6 @@
 			remoteGlobalIDString = DA87348818970AB800113896;
 			remoteInfo = "ArgumentParser-Static";
 		};
-		FA1C058B1B3DB170000E0591 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA0D29F71990A44C00EC5F74 /* ArgumentParser.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DA01E2FF1A8471E20012BCAE;
-			remoteInfo = "ArgumentParser-Dynamic Tests";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -143,7 +136,6 @@
 				FA0D2A051990A44C00EC5F74 /* spiffy */,
 				FA0D2A071990A44C00EC5F74 /* ArgumentParser-Dynamic.dylib */,
 				FA0D2A0B1990A44C00EC5F74 /* libArgumentParser-Static.a */,
-				FA1C058C1B3DB170000E0591 /* ArgumentParser-Dynamic Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,13 +232,6 @@
 			fileType = archive.ar;
 			path = "libArgumentParser-Static.a";
 			remoteRef = FA0D2A0A1990A44C00EC5F74 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FA1C058C1B3DB170000E0591 /* ArgumentParser-Dynamic Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "ArgumentParser-Dynamic Tests.xctest";
-			remoteRef = FA1C058B1B3DB170000E0591 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -375,6 +360,7 @@
 		FA0D29721990A2E300EC5F74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application: ZongQuan Wang (VWE2C42C86)";
 				CURRENT_PROJECT_VERSION = 0.2;
 				DYLIB_COMPATIBILITY_VERSION = 0.1;
 				DYLIB_CURRENT_VERSION = 0.2;
